@@ -1,39 +1,320 @@
-// src/App.tsx
-import React from "react";
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
-import ForgotPassword from "./pages/ForgotPassword";
+import React, { useState } from "react";
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import HomePage from "./pages/HomePage";
-import AddCandidate from "./pages/pages2/AddCandidate";
-import { Route, Router, Switch } from "wouter";
-import TestingAddCandidate from "./pages/pages2/TestingAddCandidate";
+import ForgotPassword from "./pages/ForgotPassword";
+import CreateCandidate from "./pages/candidatePage/CreateCandidate";
+import TestingAddCandidate from "./pages/candidatePage/TestingAddCandidate";
 import VacancyPage from "./pages/vacancy/VacancyPage";
 import AddVacancies from "./pages/vacancy/AddVacancies";
-import RecommendedCandidates from "./pages/vacancy/RecommendedCandidates";
+// import RecommendedCandidates from "./pages/vacancy/MatchingCandidates";
+import ViewCandidate from "./pages/candidatePage/ViewCandidate";
+import UpdateCandidate from "./pages/candidatePage/UpdateCandidate";
+import AttachmentOutsideList from "./pages/AttachmentOutsideList";
+import VacancySearchPage from "./pages/vacancy/VacancySearchPage";
+import ViewVacancy from "./pages/vacancy/ViewVacancy";
+import MatchingCandidates from "./pages/vacancy/MatchingCandidates";
+import CreateVacancy from "./pages/vacancy/CreateVacancy";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 
 const App: React.FC = () => {
+    const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
+    // const [user, setUser] = useState<{ username: string; email: string } | null>(null);
+
+    // useEffect(() => {
+    //     const userData = localStorage.getItem('user');
+    //     if (userData) {
+    //         setUser(JSON.parse(userData));
+    //         console.log(user);
+    //     }
+    // }, []);
+
+    // useEffect(() => {
+    //     const userData = localStorage.getItem('user');
+    //     if (userData) {
+    //         console.log('User data found:', JSON.parse(userData));
+    //     }
+    // }, []);
+
     return (
-        <Router>
-            <Switch>
-                <Route path="/" component={HomePage} />
-                <Route path="/login" component={Login} />
-                <Route path="/signup" component={SignUp} />
-                <Route path="/forgotPassword" component={ForgotPassword} />
-                <Route path="/homepage" component={HomePage} />
-                {/* <div className="min-h-screen bg-gray-100 flex items-center justify-center"> */}
-                    <Route path="/testingAddCandidate" component={TestingAddCandidate} />
-                    <Route path="/addCandidate" component={AddCandidate} />
-                {/* </div> */}
-                <Route path="/VacancyPage" component={VacancyPage} />
-                <Route path="/AddVacancies" component={AddVacancies} />
-                <Route path="/RecommendedCandidates" component={RecommendedCandidates} />
-            </Switch>
-        </Router>
+        // <Router>
+        <Routes>
+            {/* Auth */}
+            <Route
+                path="/"
+                element={token ? <HomePage token={token} setToken={setToken} /> : <Login setToken={setToken} />}
+            />
+            <Route path="/signUp" element={<SignUp />} />
+
+            {token ? (
+                <>
+                    {/* <Route path="/edit/:userId" element={<EditPage token={token} />} /> */}
+                    <Route path='/view-Candidate/:id' element={<ViewCandidate token={token}/>} />
+                    <Route path="/create-Candidate" element={<CreateCandidate token={token}/>} />
+                    <Route path="/create-vacancy" element={<CreateVacancy token={token} setToken={setToken}/>} />
+                    <Route path="/vacancy-page" element={<VacancyPage token={token} setToken={setToken}/>} />
+                    <Route path="/AddVacancies" element={<AddVacancies token={token} setToken={setToken}/>} />
+                    <Route path="/vacancy-page/vacancy-search" element={<VacancySearchPage token={token} setToken={setToken}/>} />
+                    <Route path="/vacancy-page/matching-candidates" element={<MatchingCandidates token={token} setToken={setToken}/>} />
+                    {/* <Route path="/matching-candidates" element={<RecommendedCandidates token={token} setToken={setToken}/>} /> */}
+                    <Route path="/view-vacancy/:id" element={<ViewVacancy token={token} setToken={setToken} />} />
+                    {/* <Route path="/profile" element={<ProfilePage token={token} />} /> */}
+                </>
+            ) : (
+                <Route path="*" element={<Navigate to="/" />} />  // Redirect to login if no valid token
+            )}
+
+            {/* Inside Data */}
+            {/* <Route path="/matching-candidates" element={<RecommendedCandidates />} /> */}
+            <Route path="/requestForgotPassword" element={<ForgotPassword />} />
+            {/* <Route path="/homepage" element={<HomePage />} /> */}
+            <Route path="/testingAddCandidate" element={<TestingAddCandidate />} />
+            {/* <Route path="/create-Candidate" element={<CreateCandidate />} /> */}
+            <Route path='/update-Candidate/:id' element={<UpdateCandidate />} />
+            {/* <Route path='/view-Candidate/:id' element={<ViewCandidate />} /> */}
+            <Route path="/attachment-list" element={<AttachmentOutsideList />} />
+
+            {/* Vacancy Routes */}
+            {/* <Route path="/vacancy-page" element={<VacancyPage />} /> */}
+            {/* <Route path="/vacancy-page/vacancy-search" element={<VacancySearchPage />} /> */}
+            {/* <Route path="/view-vacancy/:id" element={<ViewVacancy />} /> */}
+            {/* <Route path="/create-vacancy" element={<CreateVacancy />} /> */}
+            {/* <Route path="/AddVacancies" element={<AddVacancies />} /> */}
+
+            {/* mataching */}
+            {/* <Route path="/vacancy-page/matching-candidates" element={<MatchingCandidates />} /> */}
+        </Routes>
+        // </Router>
     );
 };
 
 export default App;
+
+
+//! Below code is like upper code but without mode edit or view
+// // src/App.tsx
+// import React, { useEffect, useState } from "react";
+// // import { Route, Routes } from "react-router-dom";
+// // import Login from "./pages/Login";
+// import ForgotPassword from "./pages/ForgotPassword";
+// // import ValidateToken from "./pages/ValidateToken";
+// // import ResetPassword from "./pages/ResetPassword";
+// // import { BrowserRouter as Router, Route } from "react-router-dom";
+// // import Login from "./pages/Login";
+// // import SignUp from "./pages/SignUp";
+// // import ForgotPassword from "./pages/ForgotPassword";
+// import HomePage from "./pages/HomePage";
+// import CreateCandidate from "./pages/candidatePage/CreateCandidate";
+// // import { Route, Router, Switch } from "wouter";
+// import TestingAddCandidate from "./pages/candidatePage/TestingAddCandidate";
+// import VacancyPage from "./pages/vacancy/VacancyPage";
+// import AddVacancies from "./pages/vacancy/AddVacancies";
+// import RecommendedCandidates from "./pages/vacancy/RecommendedCandidates";
+// // import UpdateCandidate from "./pages/candidatePage/updateCandidate";
+// import ViewCandidate from "./pages/candidatePage/ViewCandidate";
+// import UpdateCandidate from "./pages/candidatePage/UpdateCandidate";
+
+// // import { ToastContainer } from 'react-toastify';
+// // import 'react-toastify/dist/ReactToastify.css';
+// // import { Router, Routes } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import AttachmentOutsideList from "./pages/AttachmentOutsideList";
+// import VacancySearchPage from "./pages/vacancy/VacancySearchPage";
+// import ViewVacancy from "./pages/vacancy/ViewVacancy";
+
+// const App: React.FC = () => {
+//     // const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
+//     const [user, setUser] = useState<{ username: string; email: string } | null>(null);
+
+//     const [editMode, setEditMode] = useState(false);  // Manage editMode in parent
+
+//     useEffect(() => {
+//         const userData = localStorage.getItem('user');
+//         if (userData) {
+//             setUser(JSON.parse(userData));
+//             console.log(user);
+//             // console.log(token);
+//         }
+//     }, []);
+
+//     return (
+//         <Router>
+//             <Routes>
+//                 <Route path="/" element={<HomePage />} />
+//                 <Route path="/matching-candidates" element={<RecommendedCandidates />} />
+//                 {/* <Route path="/login" component={Login} />
+//                 <Route path="/signup" component={SignUp} /> */}
+//                 <Route path="/requestForgotPassword" element={<ForgotPassword />} />
+//                 <Route path="/homepage" element={<HomePage />} />
+//                 {/* <div className="min-h-screen bg-gray-100 flex items-center justify-center"> */}
+//                 <Route path="/testingAddCandidate" element={<TestingAddCandidate />} />
+//                 <Route path="/create-Candidate" element={<CreateCandidate />} />
+//                 <Route path='/update-Candidate/:id' element={<UpdateCandidate />} />
+//                 {/* <Route path='/view-Candidate/:id' component={ViewCandidate} /> */}
+//                 <Route path='/view-Candidate/:id' element={<ViewCandidate />} />
+
+//                 {/* </div> */}
+//                 <Route path="/attachment-list" element={<AttachmentOutsideList />} />
+
+//                 {/* Vacancy Route */}
+//                 {/* <Route path="/vacancy-page" element={<VacancyPage />} /> */}
+//                 <Route path="/vacancy-page" element={<VacancyPage setEditMode={setEditMode} />} />
+//                 <Route path="/vacancy-page/vacancy-search" element={<VacancySearchPage />} />
+//                 {/* <Route path="/view-vacancy/:id" element={<ViewVacancy />} /> */}
+//                 <Route path="/view-vacancy/:id" element={<ViewVacancy editMode={editMode} />} />
+//                 <Route path="/AddVacancies" element={<AddVacancies />} />
+
+//                 {/* <Route path="/matching-candidates" component={RecommendedCandidates} /> */}
+//                 {/* ToastContainer should be included once in your app */}
+//             </Routes>
+//             {/* <ToastContainer
+//                 position="top-right"
+//                 autoClose={5000}
+//                 hideProgressBar={false}
+//                 newestOnTop={false}
+//                 closeOnClick
+//                 rtl={false}
+//                 pauseOnFocusLoss
+//                 draggable
+//                 pauseOnHover
+//                 theme="colored"
+//             /> */}
+//         </Router>
+//     );
+// };
+
+// export default App;
+
+//! Below code is just like upper code but the id is not pass
+// // src/App.tsx
+// import React, { useEffect, useState } from "react";
+// // import { Route, Routes } from "react-router-dom";
+// // import Login from "./pages/Login";
+// import ForgotPassword from "./pages/ForgotPassword";
+// // import ValidateToken from "./pages/ValidateToken";
+// // import ResetPassword from "./pages/ResetPassword";
+// // import { BrowserRouter as Router, Route } from "react-router-dom";
+// // import Login from "./pages/Login";
+// // import SignUp from "./pages/SignUp";
+// // import ForgotPassword from "./pages/ForgotPassword";
+// import HomePage from "./pages/HomePage";
+// import AddCandidate from "./pages/candidatePage/AddCandidate";
+// import { Route, Router, Switch } from "wouter";
+// import TestingAddCandidate from "./pages/candidatePage/TestingAddCandidate";
+// import VacancyPage from "./pages/vacancy/VacancyPage";
+// import AddVacancies from "./pages/vacancy/AddVacancies";
+// import RecommendedCandidates from "./pages/vacancy/RecommendedCandidates";
+// // import UpdateCandidate from "./pages/candidatePage/updateCandidate";
+// import ViewCandidate from "./pages/candidatePage/ViewCandidate";
+// import UpdateCandidate from "./pages/candidatePage/UpdateCandidate";
+
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
+// const App: React.FC = () => {
+//     // const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
+//     const [user, setUser] = useState<{ username: string; email: string } | null>(null);
+
+//     useEffect(() => {
+//         const userData = localStorage.getItem('user');
+//         if (userData) {
+//             setUser(JSON.parse(userData));
+//             console.log(user);
+//             // console.log(token);
+//         }
+//     }, []);
+
+//     return (
+//         // <Routes>
+//         //     <Route
+//         //         path="/"
+//         //         element={<Login setToken={setToken} setUser={setUser} />}
+//         //     // element={<Login setToken={setToken} setUser={setUser} />}
+//         //     />
+//         //     {/* <Route path="/requestForgotPassword" component={ForgotPassword} /> */}
+//         //     <Route path="/signUp" element={<SignUp />} />
+//         //     <Route path="/requestForgotPassword" element={<ForgotPassword />} />
+//         //     <Route path="/validate" element={<ValidateToken />} />
+//         //     <Route path="/reset" element={<ResetPassword />} />
+
+//         //     <Route path="/home" element={<HomePage />} />
+//         // </Routes>
+//         <Router>
+//             <Switch>
+//                 <Route path="/" component={HomePage} />
+//                 <Route path="/matching-candidates" component={RecommendedCandidates} />
+//                 {/* <Route path="/login" component={Login} />
+//                 <Route path="/signup" component={SignUp} /> */}
+//                 <Route path="/requestForgotPassword" component={ForgotPassword} />
+//                 <Route path="/homepage" component={HomePage} />
+//                 {/* <div className="min-h-screen bg-gray-100 flex items-center justify-center"> */}
+//                 <Route path="/testingAddCandidate" component={TestingAddCandidate} />
+//                 <Route path="/addCandidate" component={AddCandidate} />
+//                 <Route path='/update-Candidate/:id' component={UpdateCandidate} />
+//                 <Route path='/view-Candidate/:id' component={ViewCandidate} />
+//                 {/* </div> */}
+//                 <Route path="/VacancyPage" component={VacancyPage} />
+//                 <Route path="/AddVacancies" component={AddVacancies} />
+//                 {/* <Route path="/matching-candidates" component={RecommendedCandidates} /> */}
+//                 {/* ToastContainer should be included once in your app */}
+//                 <ToastContainer
+//                     position="top-right"
+//                     autoClose={5000}
+//                     hideProgressBar={false}
+//                     newestOnTop={false}
+//                     closeOnClick
+//                     rtl={false}
+//                     pauseOnFocusLoss
+//                     draggable
+//                     pauseOnHover
+//                     theme="colored"
+//                 />
+//             </Switch>
+//         </Router>
+//     );
+// };
+
+// export default App;
+
+//! Below code is good
+// // src/App.tsx
+// import React from "react";
+// // import { BrowserRouter as Router, Route } from "react-router-dom";
+// import Login from "./pages/Login";
+// import SignUp from "./pages/SignUp";
+// import ForgotPassword from "./pages/ForgotPassword";
+// import HomePage from "./pages/HomePage";
+// import AddCandidate from "./pages/pages2/AddCandidate";
+// import { Route, Router, Switch } from "wouter";
+// import TestingAddCandidate from "./pages/pages2/TestingAddCandidate";
+// import VacancyPage from "./pages/vacancy/VacancyPage";
+// import AddVacancies from "./pages/vacancy/AddVacancies";
+// import RecommendedCandidates from "./pages/vacancy/RecommendedCandidates";
+
+// const App: React.FC = () => {
+//     return (
+//         <Router>
+//             <Switch>
+//                 <Route path="/" component={HomePage} />
+//                 <Route path="/matching-candidates" component={RecommendedCandidates} />
+//                 <Route path="/login" component={Login} />
+//                 <Route path="/signup" component={SignUp} />
+//                 <Route path="/forgotPassword" component={ForgotPassword} />
+//                 <Route path="/homepage" component={HomePage} />
+//                 {/* <div className="min-h-screen bg-gray-100 flex items-center justify-center"> */}
+//                 <Route path="/testingAddCandidate" component={TestingAddCandidate} />
+//                 <Route path="/addCandidate" component={AddCandidate} />
+//                 {/* </div> */}
+//                 <Route path="/VacancyPage" component={VacancyPage} />
+//                 <Route path="/AddVacancies" component={AddVacancies} />
+//                 {/* <Route path="/matching-candidates" component={RecommendedCandidates} /> */}
+//             </Switch>
+//         </Router>
+//     );
+// };
+
+// export default App;
 
 {/* <div className="absolute inset-y-0 right-80 flex items-center pr-3 pointer-events-none"></div> */ }
 {/* <div className="p-6 max-w-xs bg-white rounded-xl shadow-md"> */ }
@@ -153,7 +434,6 @@ export default App;
                     </div>
                 </div>
             </header> */}
-
 
 // import React from "react";
 // import './App.css';
