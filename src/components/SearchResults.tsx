@@ -45,7 +45,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({
                             {results.map((result, index) => (
                                 <tr key={result.id} className='cursor-pointer hover:bg-slate-100' onClick={() => goToViewCandidate(result.id)}>
                                     <td className='p-2 flex items-center justify-center'>
-                                        <img src="../src/assets/ProfileImage.png" alt="ProfileImage.png" className='h-8' />
+                                        <img src="assets/ProfileImage.png" alt="ProfileImage.png" className='h-8' />
                                     </td>
                                     <td className='p-2 text-center'>
                                         {result.candidateName}
@@ -74,7 +74,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({
                                                     <div className="flex flex-col">
                                                         <div className="flex justify-between mb-2">
                                                             <div className="p-2 mr-2 flex items-center">
-                                                                <img src="../src/assets/vacancies/Edit.png" alt="Edit.png" className='h-8 mr-4' />
+                                                                <img src="assets/vacancies/Edit.png" alt="Edit.png" className='h-8 mr-4' />
                                                                 <span className='mr-8 text-lg hover:text-green-400'><a href="" onClick={(e) => { e.stopPropagation(); goToEditCandidate(result.id) }}>Edit</a></span>
                                                             </div>
                                                             <div className="p-2 justify-end text-end">
@@ -83,7 +83,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({
                                                         </div>
                                                         <div key={result.id} className="flex justify-between mb-2">
                                                             <div className="p-2 mr-2 flex items-center">
-                                                                <img src="../src/assets/vacancies/Delete.png" alt="Delete.png" className="h-8 mr-3" />
+                                                                <img src="assets/vacancies/Delete.png" alt="Delete.png" className="h-8 mr-3" />
                                                                 <span
                                                                     className="text-lg hover:text-green-400 cursor-pointer"
                                                                     onClick={(e) => { e.stopPropagation(); handleDeleteClick(result.id, result.candidateName); }}
@@ -161,7 +161,7 @@ export default SearchResults;
 //                             {results.map((result, index) => (
 //                                 <tr key={result.id} className='cursor-pointer hover:bg-slate-100' onClick={() => goToViewCandidate(result.id)}>
 //                                     <td className='p-2 flex items-center justify-center'>
-//                                         <img src="../src/assets/ProfileImage.png" alt="ProfileImage.png" className='h-8' />
+//                                         <img src="assets/ProfileImage.png" alt="ProfileImage.png" className='h-8' />
 //                                     </td>
 //                                     <td className='p-2 text-center'>
 //                                         {result.candidateName}

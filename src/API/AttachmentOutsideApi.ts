@@ -9,17 +9,24 @@ export const getAttachments = async (token: string, sortBy?: string, ascending?:
     try {
         let response;
 
+        console.log("token under getAttachments", token);
+
         if (sortBy) {
+            console.log("token under sortBy getAttachments", token);
             // If sortBy is provided, add sorting and ordering parameters
             response = await axios.get(API_URL, {
                 headers: { Authorization: `Bearer ${token}` },
                 params: { sortBy, ascending },
             });
+            console.log("token under after sortBy getAttachments", token);
         } else {
+            console.log("else token under sortBy getAttachments", token);
             // If no sortBy is provided, make a request to the default API endpoint
             response = await axios.get(API_URL, {
                 headers: { Authorization: `Bearer ${token}` },
             });
+            console.log("response", response);
+            console.log("else token after under sortBy getAttachments", token);
         }
         // Display success message from backend
         toast.success(response.data);

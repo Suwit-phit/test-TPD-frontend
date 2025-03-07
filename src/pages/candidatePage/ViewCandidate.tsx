@@ -201,7 +201,7 @@ const ViewCandidate: React.FC<ViewCandidateProps> = ({ token }) => {
                                         ))
                                     ) : (
                                         <span className="text-gray-500 text-2xl">
-                                            <img className="w-8 h-8" src="../src/assets/user.png" alt="Default" />
+                                            <img className="w-8 h-8" src="assets/user.png" alt="Default" />
                                         </span>
                                     )
                                 )}
@@ -212,7 +212,7 @@ const ViewCandidate: React.FC<ViewCandidateProps> = ({ token }) => {
                             >
                                 <img
                                     className="w-8 h-8"
-                                    src={"../src/assets/image-upload.png"}
+                                    src={"../assets/image-upload.png"}
                                     alt="upload"
                                 />
                             </label>
@@ -257,7 +257,7 @@ const ViewCandidate: React.FC<ViewCandidateProps> = ({ token }) => {
                                 ))
                             ) : (
                                 <span className="text-gray-500 text-2xl">
-                                    <img className="w-8 h-8" src="../src/assets/user.png" alt="picture.png" />
+                                    <img className="w-8 h-8" src="assets/user.png" alt="picture.png" />
                                 </span>
                             )}
                         </label>
@@ -267,7 +267,7 @@ const ViewCandidate: React.FC<ViewCandidateProps> = ({ token }) => {
                         >
                             <img
                                 className="w-8 h-8"
-                                src={"../src/assets/image-upload.png"}
+                                src={"assets/image-upload.png"}
                                 alt="upload"
                             />
                         </label>

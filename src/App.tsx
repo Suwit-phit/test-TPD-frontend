@@ -17,6 +17,7 @@ import MatchingCandidates from "./pages/vacancy/MatchingCandidates";
 import CreateVacancy from "./pages/vacancy/CreateVacancy";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import AttachmentManager from "./pages/AttachmentManager";
 
 const App: React.FC = () => {
     const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
@@ -60,6 +61,7 @@ const App: React.FC = () => {
                     {/* <Route path="/matching-candidates" element={<RecommendedCandidates token={token} setToken={setToken}/>} /> */}
                     <Route path="/view-vacancy/:id" element={<ViewVacancy token={token} setToken={setToken} />} />
                     {/* <Route path="/profile" element={<ProfilePage token={token} />} /> */}
+                    <Route path="/attachment-list" element={<AttachmentOutsideList token={token}/>} />
                 </>
             ) : (
                 <Route path="*" element={<Navigate to="/" />} />  // Redirect to login if no valid token
@@ -73,7 +75,8 @@ const App: React.FC = () => {
             {/* <Route path="/create-Candidate" element={<CreateCandidate />} /> */}
             <Route path='/update-Candidate/:id' element={<UpdateCandidate />} />
             {/* <Route path='/view-Candidate/:id' element={<ViewCandidate />} /> */}
-            <Route path="/attachment-list" element={<AttachmentOutsideList />} />
+            {/* <Route path="/attachment-list" element={<AttachmentOutsideList />} /> */}
+            <Route path="/attachmentManager" element={<AttachmentManager />} />
 
             {/* Vacancy Routes */}
             {/* <Route path="/vacancy-page" element={<VacancyPage />} /> */}

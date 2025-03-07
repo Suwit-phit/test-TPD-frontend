@@ -46,7 +46,7 @@ const ResetPassword: React.FC = () => {
         <div className="min-h-screen">
             <header className="bg-white py-6">
                 <div className="flex justify-center">
-                    <img src="../src/assets/ATALogo.png" alt="ATA logo" className="h-20" />
+                    <img src="../assets/ATALogo.png" alt="ATA logo" className="h-20" />
                 </div>
                 <div className="flex justify-center">
                     <h1 className="text-1xl font-bold">Talent Pool Database</h1>

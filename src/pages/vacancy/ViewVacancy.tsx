@@ -102,7 +102,7 @@ const ViewVacancy: React.FC<ViewVacancyProps> = ({ token, setToken }) => {
                 <div className="grid grid-cols-2 gap-6 mb-6">
                     {/* Vacancy Title */}
                     <div className="flex items-center space-x-3">
-                        <img src="../src/assets/vacancies/PositionTitle.png" alt="PositionTitle.png" className='h-10' />
+                        <img src="../assets/vacancies/PositionTitle.png" alt="PositionTitle.png" className='h-10' />
                         <input
                             type="text"
                             name="positionTitle"
@@ -116,7 +116,7 @@ const ViewVacancy: React.FC<ViewVacancyProps> = ({ token, setToken }) => {
 
                     {/* Salary with Currency Dropdown */}
                     <div className="flex items-center space-x-3">
-                        <img src="../src/assets/vacancies/Salary.png" alt="Salary.png" className='h-10' />
+                        <img src="../assets/vacancies/Salary.png" alt="Salary.png" className='h-10' />
                         <input
                             type="number"
                             name="salary"
@@ -145,7 +145,7 @@ const ViewVacancy: React.FC<ViewVacancyProps> = ({ token, setToken }) => {
 
                     {/* Position Applied */}
                     <div className="flex items-center space-x-3">
-                        <img src="../src/assets/vacancies/PositionApplied.png" alt="PositionApplied.png" className='h-10' />
+                        <img src="../assets/vacancies/PositionApplied.png" alt="PositionApplied.png" className='h-10' />
                         <input
                             type="text"
                             name="positionApplied"
@@ -159,7 +159,7 @@ const ViewVacancy: React.FC<ViewVacancyProps> = ({ token, setToken }) => {
 
                     {/* Date of Vacancy Opening */}
                     <div className="flex items-center space-x-3">
-                        <img src="../src/assets/vacancies/Dateofapplication.png" alt="Dateofapplication.png" className='h-10' />
+                        <img src="../assets/vacancies/Dateofapplication.png" alt="Dateofapplication.png" className='h-10' />
                         <input
                             type="date"
                             name="dateOfApplication"
@@ -172,7 +172,7 @@ const ViewVacancy: React.FC<ViewVacancyProps> = ({ token, setToken }) => {
 
                     {/* Skills Required */}
                     <div className="flex items-center space-x-3">
-                        <img src="../src/assets/vacancies/skills.png" alt="skills.png" className='h-10' />
+                        <img src="../assets/vacancies/skills.png" alt="skills.png" className='h-10' />
                         <input
                             type="text"
                             name="skills"
@@ -295,7 +295,7 @@ export default ViewVacancy;
 //                     {/* Vacancy Title */}
 //                     <div className="flex items-center space-x-3">
 //                         {/* <FaBriefcase size={30} /> */}
-//                         <img src="../src/assets/vacancies/PositionTitle.png" alt="PositionTitle.png" className='h-10' />
+//                         <img src="../assets/vacancies/PositionTitle.png" alt="PositionTitle.png" className='h-10' />
 //                         <input
 //                             type="text"
 //                             placeholder="Position Title"

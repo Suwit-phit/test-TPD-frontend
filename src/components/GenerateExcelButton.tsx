@@ -39,13 +39,13 @@ const GenerateExcelButton: React.FC = () => {
         <div className="flex space-x-4 ">
             {/* Button to generate Excel for Candidates */}
             <div className="cursor-pointer flex items-center" onClick={handleGenerateCandidateExcel}>
-                <img src="../src/assets/GenerateExcel.png" alt="Generate Excel" className="h-8" />
+                <img src="assets/GenerateExcel.png" alt="Generate Excel" className="h-8" />
                 <h4 className="ml-2 hover:text-slate-300">Generate Candidate Excel</h4>
             </div>
 
             {/* Button to generate Excel for Vacancies */}
             <div className="cursor-pointer flex items-center" onClick={handleGenerateVacancyExcel}>
-                <img src="../src/assets/GenerateExcel.png" alt="Generate Excel" className="h-8" />
+                <img src="assets/GenerateExcel.png" alt="Generate Excel" className="h-8" />
                 <h4 className="ml-2 hover:text-slate-300">Generate Vacancy Excel</h4>
             </div>
         </div>

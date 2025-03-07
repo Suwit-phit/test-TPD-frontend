@@ -5,6 +5,12 @@ import { ClipLoader } from 'react-spinners'; // Import ClipLoader spinner
 import { deleteAttachment, downloadAttachment, getAttachments } from '../API/AttachmentOutsideApi';
 import { Modal } from 'antd';
 
+interface AttachmentOutsideListProps {
+    token: string;
+    // candidateId: string;
+    // setToken: (token: string | null) => void;  // Add this line to define the prop type
+}
+
 interface Attachment {
     id: string;
     fileName: string;
@@ -12,7 +18,7 @@ interface Attachment {
     createdAt: string | null;
 }
 
-const AttachmentOutsideList: React.FC = () => {
+const AttachmentOutsideList: React.FC<AttachmentOutsideListProps> = ({ token }) => {
     const [attachments, setAttachments] = useState<Attachment[]>([]);
     const [sortOption, setSortOption] = useState<string>('original');
     const [loading, setLoading] = useState<boolean>(false); // State to manage loading
@@ -27,7 +33,7 @@ const AttachmentOutsideList: React.FC = () => {
 
     const handleOk = () => {
         if (selectedAttachment) {
-            deleteAttachment(selectedAttachment.id, selectedAttachment.fileName)
+            deleteAttachment(token, selectedAttachment.id, selectedAttachment.fileName)
                 .then(() => {
                     fetchAttachments();
                     setIsModalVisible(false);
@@ -54,11 +60,15 @@ const AttachmentOutsideList: React.FC = () => {
         try {
             let data;
             if (sortOption === 'original') {
-                data = await getAttachments();
+                console.log("token under fetchAttachments:", token)
+                data = await getAttachments(token);
+                console.log("data under fetchAttachments:", data);
             } else if (sortOption === 'ascending') {
-                data = await getAttachments('fileName', true);
+                console.log("token under sortOption === 'ascending':", token)
+                data = await getAttachments(token, 'fileName', true);
             } else if (sortOption === 'descending') {
-                data = await getAttachments('fileName', false);
+                console.log("token under sortOption === 'descending':", token)
+                data = await getAttachments(token, 'fileName', false);
             }
             setAttachments(data);
         } catch (error) {
@@ -69,7 +79,7 @@ const AttachmentOutsideList: React.FC = () => {
     };
 
     const handleDownload = (id: string, fileName: string) => {
-        downloadAttachment(id, fileName).catch((error) => {
+        downloadAttachment(token, id, fileName).catch((error) => {
             console.error('Failed to download attachment:', error);
         });
     };

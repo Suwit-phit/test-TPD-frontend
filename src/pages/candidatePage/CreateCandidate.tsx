@@ -262,14 +262,14 @@ const CreateCandidate: React.FC<CreateCandidateProps> = ({ token }) => {
                                 <img src={imageUrl} alt="Profile" className="w-full h-full object-cover rounded-full" onClick={() => window.open(imageUrl, '_blank')} />
                             ) : (
                                 <span className="text-gray-500 text-2xl">
-                                    <img className=' w-8 h-8' src="../src/assets/user.png" alt="picture.png" />
-                                    {/* <img className=' w-8 h-8' src="../src/assets/picture.png" alt="picture.png" /> */}
+                                    <img className=' w-8 h-8' src="assets/user.png" alt="picture.png" />
+                                    {/* <img className=' w-8 h-8' src="assets/picture.png" alt="picture.png" /> */}
                                 </span>
                             )}
                         </label>
                         <label htmlFor="file-upload" className="absolute bottom-0 right-60 flex items-center justify-center text-white cursor-pointer">
-                            <img className=' w-8 h-8' src="../src/assets/image-upload.png" alt="upload.png" />
-                            {/* <img className=' w-8 h-8' src="../src/assets/upload.png" alt="upload.png" /> */}
+                            <img className=' w-8 h-8' src="assets/image-upload.png" alt="upload.png" />
+                            {/* <img className=' w-8 h-8' src="assets/upload.png" alt="upload.png" /> */}
                         </label>
                         {/* <label htmlFor="file-upload" className="absolute bottom-0 right-0 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white cursor-pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -786,7 +786,7 @@ export default CreateCandidate;
 //         <div className="flex justify-between items-center">
 //           <div className="flex items-center">
 //             <img
-//               src="../src/assets/ATALogo.png"
+//               src="assets/ATALogo.png"
 //               alt="ATALogo"
 //               className="h-20 " style={{ marginLeft: 20 }}
 //             />

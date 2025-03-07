@@ -292,29 +292,30 @@ const HomePage: React.FC<HomePageProps> = ({ token, setToken }) => {
                     <div className="w-96 mr-4">
                         <div className="p-6 max-w-xs bg-white rounded-xl shadow-md">
                             <div className='flex items-center justify-center'>
-                                <img src="../src/assets/NewCandidate.png" alt="NewCandidate.png" className='h-10' />
-                                <h1 className='text-lg ml-2 mt-5'>New Candidate</h1>
+                                <img src="../assets/NewCandidate.png" alt="NewCandidate.png" className='h-10' />
+                                {/* <h1 className='text-lg ml-2 mt-5'>New Candidate</h1> */}
+                                <a href='/attachmentManager' className='text-lg ml-2 mt-5'>New Candidate</a>
                             </div>
                             <hr className="my-2 w-full border-gray-300" />
                             <a href='/create-Candidate' className='cursor-pointer flex items-center'>
-                                <img src="../src/assets/AddCandidate.png" alt="AddCandidate.png" className='h-8' />
+                                <img src="../assets/AddCandidate.png" alt="AddCandidate.png" className='h-8' />
                                 <h4 className='ml-2 hover:text-slate-300'>Create Candidate</h4>
                                 {/* <h4 className='ml-2 hover:text-slate-300'>Add Candidate</h4> */}
                             </a>
                             <a onClick={handleUploadClick} className='cursor-pointer flex items-center mt-2'>
-                                <img src="../src/assets/upload (1).png" alt="AddCandidate.png" className='h-8' />
+                                <img src="../assets/upload (1).png" alt="AddCandidate.png" className='h-8' />
                                 <h4 className='ml-2 hover:text-slate-300'>Upload attachment</h4>
                                 {/* <h4 className='ml-2 hover:text-slate-300'>Add Candidate</h4> */}
                             </a>
                             <a onClick={handleManageClick} className='cursor-pointer flex items-center mt-2'>
-                                <img src="../src/assets/file.png" alt="AddCandidate.png" className='h-8' />
+                                <img src="../assets/file.png" alt="AddCandidate.png" className='h-8' />
                                 <h4 className='ml-2 hover:text-slate-300'>Attachments</h4>
                             </a>
                         </div>
                         <br />
                         <div className="p-6 max-w-xs bg-white rounded-xl shadow-md">
                             <div className='flex items-center justify-center'>
-                                <img src="../src/assets/ReportFunction.png" alt="ReportFunction.png" className='h-10' />
+                                <img src="../assets/ReportFunction.png" alt="ReportFunction.png" className='h-10' />
                                 <h1 className='text-lg ml-2 mt-5'>Report Function</h1>
                             </div>
                             <hr className="my-2 w-full border-gray-300" />
@@ -448,7 +449,7 @@ const HomePage: React.FC<HomePageProps> = ({ token, setToken }) => {
                                 {!searching && sortedCandidates.map((candidate, index) => (
                                     <tr key={candidate.id} className='cursor-pointer hover:bg-slate-100' onClick={() => goToViewCandidate(candidate.id)}>
                                         <td className='p-2 flex items-center justify-center'>
-                                            <img src="../src/assets/ProfileImage.png" alt="ProfileImage.png" className='h-8' />
+                                            <img src="../assets/ProfileImage.png" alt="ProfileImage.png" className='h-8' />
                                         </td>
                                         <td className='p-2 text-center'>
                                             {candidate.candidateName}
@@ -477,7 +478,7 @@ const HomePage: React.FC<HomePageProps> = ({ token, setToken }) => {
                                                         <div className="flex flex-col">
                                                             <div className="flex justify-between mb-2">
                                                                 <div className="p-2 mr-2 flex items-center">
-                                                                    <img src="../src/assets/vacancies/Edit.png" alt="Edit.png" className='h-8 mr-4' />
+                                                                    <img src="../assets/vacancies/Edit.png" alt="Edit.png" className='h-8 mr-4' />
                                                                     <span className='mr-8 text-lg hover:text-slate-300'><a href="" onClick={(e) => { e.stopPropagation(); goToEditCandidate(candidate.id) }}>Edit</a></span>
                                                                 </div>
                                                                 <div className="p-2 justify-end text-end">
@@ -486,7 +487,7 @@ const HomePage: React.FC<HomePageProps> = ({ token, setToken }) => {
                                                             </div>
                                                             <div key={candidate.id} className="flex justify-between mb-2">
                                                                 <div className="p-2 mr-2 flex items-center">
-                                                                    <img src="../src/assets/vacancies/Delete.png" alt="Delete.png" className="h-8 mr-3" />
+                                                                    <img src="../assets/vacancies/Delete.png" alt="Delete.png" className="h-8 mr-3" />
                                                                     <span
                                                                         className="text-lg hover:text-slate-300 cursor-pointer"
                                                                         onClick={(e) => { e.stopPropagation(); handleDeleteClick(candidate.id, candidate.candidateName); }}

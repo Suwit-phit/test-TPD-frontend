@@ -20,6 +20,7 @@
     "@mantine/hooks": "^7.12.2",
     "@mantine/modals": "^7.12.2",
     "@mui/material": "^6.1.6",
+    "@tanstack/react-query": "^5.67.1",
     "antd": "^5.21.6",
     "axios": "^1.7.7",
     "buffer": "^6.0.3",

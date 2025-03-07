@@ -22,12 +22,12 @@ const GenerateCsvButton: React.FC <GenerateCsvButtonProps> = ({ token }) => {
         // <div>
         <div className="flex space-x-4 -ml-1">
             <div className="cursor-pointer flex items-center" onClick={() => handleGenerateCsv('candidates')}>
-                <img src="../src/assets/GenerateCSV.png" alt="GenerateCSV" className="h-8" />
+                <img src="assets/GenerateCSV.png" alt="GenerateCSV" className="h-8" />
                 <h4 className="ml-1 hover:text-slate-300">Generate Candidates CSV</h4>
             </div>
 
             <div className="cursor-pointer flex items-center mt-4" onClick={() => handleGenerateCsv('vacancies')}>
-                <img src="../src/assets/GenerateCSV.png" alt="GenerateCSV" className="h-8" />
+                <img src="assets/GenerateCSV.png" alt="GenerateCSV" className="h-8" />
                 <h4 className="ml-1 hover:text-slate-300">Generate Vacancies CSV</h4>
             </div>
 

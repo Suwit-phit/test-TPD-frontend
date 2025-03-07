@@ -205,7 +205,7 @@ const VacancySearchPage: React.FC<VacancySearchPageProps> = ({ token, setToken }
                                                     <td className='p-2 text-center'>{result.positionTitle}</td>
                                                     {/* <td className='p-2 text-center'>{result.title}</td> */}
                                                     <td className='p-2 flex items-center justify-center'>
-                                                        {/* <img src="../src/assets/ProfileImage.png" alt="ProfileImage.png" className='h-8 mr-3' /> */}
+                                                        {/* <img src="../assets/ProfileImage.png" alt="ProfileImage.png" className='h-8 mr-3' /> */}
                                                         <span>{result.positionApplied}</span>
                                                         {/* <span>{result.position}</span> */}
                                                     </td>
@@ -223,7 +223,7 @@ const VacancySearchPage: React.FC<VacancySearchPageProps> = ({ token, setToken }
                                                                         {/* First Row */}
                                                                         <div className="flex justify-between mb-2">
                                                                             <div className=" p-2 mr-2 flex items-center">
-                                                                                <img src="../src/assets/vacancies/Edit.png" alt="Edit.png" className='h-8 mr-4' />
+                                                                                <img src="../assets/vacancies/Edit.png" alt="Edit.png" className='h-8 mr-4' />
                                                                                 <span className=' mr-8 text-lg hover:text-green-400'
                                                                                     onClick={(e) => {
                                                                                         e.stopPropagation();  // Prevent triggering row click
@@ -244,7 +244,7 @@ const VacancySearchPage: React.FC<VacancySearchPageProps> = ({ token, setToken }
                                                                         {/* Second Row */}
                                                                         <div className="mb-2  flex items-center">
                                                                             {/* <div className="bg-gray-200 p-2 mr-2 flex items-center px-20"> */}
-                                                                            <img src="../src/assets/vacancies/RecommendedCandidates.png" alt="RecommendedCandidates.png" className='h-8 mr-5' />
+                                                                            <img src="../assets/vacancies/RecommendedCandidates.png" alt="RecommendedCandidates.png" className='h-8 mr-5' />
                                                                             <span className=' text-lg hover:text-green-400'>
                                                                                 {/* <a href="" onClick={() => goToViewRecommendCan(result)}>
                                                                                     Recommended candidates</a> */}
@@ -258,7 +258,7 @@ const VacancySearchPage: React.FC<VacancySearchPageProps> = ({ token, setToken }
 
                                                                         <div className="flex justify-between mb-2">
                                                                             <div className=" p-2 mr-2 flex items-center">
-                                                                                <img src="../src/assets/vacancies/Delete.png" alt="Delete.png" className='h-8 mr-3' />
+                                                                                <img src="../assets/vacancies/Delete.png" alt="Delete.png" className='h-8 mr-3' />
                                                                                 <span className=' text-lg hover:text-green-400 cursor-pointer'
                                                                                     onClick={(e) => { e.stopPropagation(); openConfirmation(result.id, result.positionApplied, index) }}
                                                                                 >
@@ -287,7 +287,7 @@ const VacancySearchPage: React.FC<VacancySearchPageProps> = ({ token, setToken }
                     ) : (
                         <div className=" flex justify-center items-center py-4">
                             <div className="  flex flex-col items-center px-72">
-                                <img src="../src/assets/vacancies/vacancySearch/seo.png" alt="VacancyNDA.png" className='h-48' />
+                                <img src="../assets/vacancies/vacancySearch/seo.png" alt="VacancyNDA.png" className='h-48' />
                                 <h1 className='text-center mt-2 py-2 text-3xl font-bold'>No Data</h1>
                                 <h1 className='text-center text-lg'>Please Search something to make the data appear.</h1>
                             </div>

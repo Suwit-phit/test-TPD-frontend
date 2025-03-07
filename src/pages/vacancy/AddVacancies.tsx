@@ -104,7 +104,7 @@ const AddVacancies: React.FC<AddVacanciesProps> = ({ token, setToken }) => {
                         <div className="flex justify-between">
                             <div className="flex items-center">
                                 <div className="p-2 mr-2">
-                                    <img src="../src/assets/vacancies/PositionTitle.png" alt="PositionTitle.png" className='h-10' />
+                                    <img src="assets/vacancies/PositionTitle.png" alt="PositionTitle.png" className='h-10' />
                                 </div>
                                 <div className="p-2">
                                     <input
@@ -121,7 +121,7 @@ const AddVacancies: React.FC<AddVacanciesProps> = ({ token, setToken }) => {
 
                             <div className="flex items-center">
                                 <div className="mr-2">
-                                    <img src="../src/assets/vacancies/Salary.png" alt="Salary.png" className='h-10' />
+                                    <img src="assets/vacancies/Salary.png" alt="Salary.png" className='h-10' />
                                 </div>
                                 <div className="mr-2">
                                     <input
@@ -152,7 +152,7 @@ const AddVacancies: React.FC<AddVacanciesProps> = ({ token, setToken }) => {
                         <div className="flex justify-between">
                             <div className="flex items-center">
                                 <div className="p-2 mr-2">
-                                    <img src="../src/assets/vacancies/PositionApplied.png" alt="PositionApplied.png" className='h-10' />
+                                    <img src="assets/vacancies/PositionApplied.png" alt="PositionApplied.png" className='h-10' />
                                 </div>
                                 <div className="p-2">
                                     <input
@@ -273,7 +273,7 @@ export default AddVacancies;
 //                                 {/* First column */}
 //                                 <div className=" p-2 mr-2">
 //                                     {/* <div className="bg-gray-200 p-2 mr-2"> */}
-//                                     <img src="../src/assets/vacancies/PositionTitle.png" alt="PositionTitle.png" className='h-10' />
+//                                     <img src="assets/vacancies/PositionTitle.png" alt="PositionTitle.png" className='h-10' />
 //                                 </div>
 //                                 {/* Second column */}
 //                                 <div className=" p-2">

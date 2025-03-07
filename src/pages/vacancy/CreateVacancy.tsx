@@ -90,7 +90,7 @@ const CreateVacancy: React.FC<CreateVacancyProps> = ({ token, setToken }) => {
                 <div className="grid grid-cols-2 gap-6 mb-6">
                     {/* Vacancy Title */}
                     <div className="flex items-center space-x-3">
-                        <img src="../src/assets/vacancies/PositionTitle.png" alt="PositionTitle.png" className='h-10' />
+                        <img src="assets/vacancies/PositionTitle.png" alt="PositionTitle.png" className='h-10' />
                         <input
                             required
                             type="text"
@@ -104,7 +104,7 @@ const CreateVacancy: React.FC<CreateVacancyProps> = ({ token, setToken }) => {
 
                     {/* Salary with Currency Dropdown */}
                     <div className="flex items-center space-x-3">
-                        <img src="../src/assets/vacancies/Salary.png" alt="Salary.png" className='h-10' />
+                        <img src="assets/vacancies/Salary.png" alt="Salary.png" className='h-10' />
                         <input
                             required
                             type="number"
@@ -128,7 +128,7 @@ const CreateVacancy: React.FC<CreateVacancyProps> = ({ token, setToken }) => {
 
                     {/* Position Applied */}
                     <div className="flex items-center space-x-3">
-                        <img src="../src/assets/vacancies/PositionApplied.png" alt="PositionApplied.png" className='h-10' />
+                        <img src="assets/vacancies/PositionApplied.png" alt="PositionApplied.png" className='h-10' />
                         <input
                             required
                             type="text"
@@ -142,7 +142,7 @@ const CreateVacancy: React.FC<CreateVacancyProps> = ({ token, setToken }) => {
 
                     {/* Date of Vacancy Opening */}
                     <div className="flex items-center space-x-3">
-                        <img src="../src/assets/vacancies/Dateofapplication.png" alt="Dateofapplication.png" className='h-10' />
+                        <img src="assets/vacancies/Dateofapplication.png" alt="Dateofapplication.png" className='h-10' />
                         <input
                             required
                             type="date"
@@ -155,7 +155,7 @@ const CreateVacancy: React.FC<CreateVacancyProps> = ({ token, setToken }) => {
 
                     {/* Skills Required */}
                     <div className="flex items-center space-x-3">
-                        <img src="../src/assets/vacancies/skills.png" alt="skills.png" className='h-10' />
+                        <img src="assets/vacancies/skills.png" alt="skills.png" className='h-10' />
                         <input
                             required
                             type="text"
@@ -323,7 +323,7 @@ export default CreateVacancy;
 //                 <div className="grid grid-cols-2 gap-6 mb-6">
 //                     {/* Vacancy Title */}
 //                     <div className="flex items-center space-x-3">
-//                         <img src="../src/assets/vacancies/PositionTitle.png" alt="PositionTitle.png" className='h-10' />
+//                         <img src="assets/vacancies/PositionTitle.png" alt="PositionTitle.png" className='h-10' />
 //                         <input
 //                             required
 //                             type="text"

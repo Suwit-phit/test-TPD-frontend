@@ -1,7 +1,8 @@
 // src/MyComponent.tsx
 // src/components/UserProfile.tsx
 import React, { useRef, useState } from 'react';
-import atalogo from "../../assets/ATALogo.png"
+import atalogo from "/public/assets/ATALogo.png";
+// import atalogo from "../../assets/ATALogo.png"
 
 const UserProfile: React.FC = () => {
     const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -33,7 +34,7 @@ const UserProfile: React.FC = () => {
             <header>
                 <div className='flex justify-between items-center'>
                     <div className='flex items-center'>
-                        <img src="../src/assets/ATALogo.png" alt="ATALogo" className='h-20' />
+                        <img src="assets/ATALogo.png" alt="ATALogo" className='h-20' />
                         <h1 className='text-lg ml-2'>Talent Pool Database</h1>
                     </div>
                     <div className='flex items-center space-x-2 px-2'>
@@ -432,7 +433,7 @@ const UserProfile: React.FC = () => {
                     <div className="flex flex-col items-center relative">
                         <div className="w-80 h-80 bg-blue-500 rounded-full mb-4 relative">
                             {/* Image inside the circle */}
-                            {/* <img src="../src/assets/ATALogo.png" alt="ATALogo" className="w-full h-full object-cover rounded-full" /> */}
+                            {/* <img src="assets/ATALogo.png" alt="ATALogo" className="w-full h-full object-cover rounded-full" /> */}
                             {/* Font Awesome icon at the bottom right */}
                             {/* <i className=" text-4xl fas fa-file-upload absolute bottom-9 right-9"></i> */}
                         </div>
@@ -452,7 +453,7 @@ const UserProfile: React.FC = () => {
                             <div className="w-80 h-80 bg-blue-500 rounded-full mb-2 overflow-hidden relative">
                                 <img
                                     className="w-full h-full object-cover"
-                                    src="../src/assets/ATALogo.png"
+                                    src="assets/ATALogo.png"
                                     alt="First Row Image"
                                 />
                                 <i className="fas fa-file-upload absolute bottom-0 right-0"></i>
@@ -471,7 +472,7 @@ const UserProfile: React.FC = () => {
                         {/* Circle 1 */}
                         <img
                             className="w-full h-full object-cover"
-                            src="../src/assets/ATALogo.png"
+                            src="assets/ATALogo.png"
                             alt="First Row Image"
                         />
                         <i className="fas fa-file-upload"></i>
@@ -493,7 +494,7 @@ const UserProfile: React.FC = () => {
             {/* <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-500">
         <img
           className="w-full h-full object-cover rounded-full"
-          src="../src/assets/ATALogo.png"
+          src="assets/ATALogo.png"
           alt="First Row Image"
         />
       </div> */}
@@ -516,14 +517,14 @@ const UserProfile: React.FC = () => {
                         {/* <div className="w-80 h-80 flex items-center justify-center rounded-full overflow-hidden">
               <img
                 className="w-full h-full object-cover rounded-full"
-                src="../src/assets/ATALogo.png"
+                src="assets/ATALogo.png"
                 alt="First Row Image"
               />
             </div> */}
                         {/* <div className="w-80 h-80 rounded-full overflow-hidden">
               <img
                 className="w-full h-full object-cover"
-                src="../src/assets/ATALogo.png"
+                src="assets/ATALogo.png"
                 alt="First Row Image"
               />
             </div> */}
@@ -547,7 +548,7 @@ const UserProfile: React.FC = () => {
                     {/* <div className=" bg-red-500 relative w-64 h-64 rounded-full overflow-hidden"> */}
                     {/* <div className=" w-80 h-80 mt-20 bg-red-500">
             <img
-              src="../src/assets/ATALogo.png"
+              src="assets/ATALogo.png"
               alt="Cosmic Background"
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -563,7 +564,7 @@ const UserProfile: React.FC = () => {
             <div className=" bg-red-500 relative w-24 h-24 rounded-full overflow-hidden">
                 {/* Cosmic background */}
                 <img
-                    src="../src/assets/ATALogo.png"
+                    src="assets/ATALogo.png"
                     alt="Cosmic Background"
                     className="absolute inset-0 w-full h-full object-cover"
                 />

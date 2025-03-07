@@ -98,7 +98,7 @@ const MatchingCandidates: React.FC<MatchingCandidatesProps> = ({ token, setToken
                         matchingCandidates.length === 0 ? (
                             <div className=" flex justify-center items-center py-4">
                                 <div className="  flex flex-col items-center px-72">
-                                    <img src="../src/assets/vacancies/matching.png" alt="VacancyNDA.png" className='h-48' />
+                                    <img src="../assets/vacancies/matching.png" alt="VacancyNDA.png" className='h-48' />
                                     <h1 className='text-center mt-2 py-2 text-3xl font-bold'>No Data</h1>
                                     <h1 className='text-center text-lg'>No Data matching with the information that you have create vacancy.</h1>
                                 </div>
@@ -132,7 +132,7 @@ const MatchingCandidates: React.FC<MatchingCandidatesProps> = ({ token, setToken
                                                 </th>
                                                 <td className='p-2 text-center'>{candidate.matchPercentage}%</td>
                                                 <td className='p-2 flex items-center justify-center'>
-                                                    <img src="../src/assets/ProfileImage.png" alt="ProfileImage.png" className='h-8 mr-3' />
+                                                    <img src="../assets/ProfileImage.png" alt="ProfileImage.png" className='h-8 mr-3' />
                                                     <span>{candidate.candidate.candidateName}</span>
                                                 </td>
                                                 <td className='p-2 text-center'>{candidate.candidate.position}</td>
@@ -304,7 +304,7 @@ export default MatchingCandidates;
 //                                 </th>
 //                                 <td className='p-2 text-center'>{candidate.matchPercentage}%</td>
 //                                 <td className='p-2 flex items-center justify-center'>
-//                                     <img src="../src/assets/ProfileImage.png" alt="ProfileImage.png" className='h-8 mr-3' />
+//                                     <img src="assets/ProfileImage.png" alt="ProfileImage.png" className='h-8 mr-3' />
 //                                     <span>{candidate.candidate.candidateName}</span>
 //                                 </td>
 //                                 <td className='p-2 text-center'>{candidate.candidate.position}</td>

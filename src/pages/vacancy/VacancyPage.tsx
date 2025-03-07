@@ -199,7 +199,7 @@ const VacancyPage: React.FC<VacancyPageProps> = ({ token, setToken }) => {
               // {candidatesData.length === 0 ? (
               <div className=" flex justify-center items-center py-4">
                 <div className="  flex flex-col items-center px-72">
-                  <img src="../src/assets/vacancies/VacancyNDA.png" alt="VacancyNDA.png" className='h-48' />
+                  <img src="../assets/vacancies/VacancyNDA.png" alt="VacancyNDA.png" className='h-48' />
                   <h1 className='text-center mt-2 py-2 text-3xl font-bold'>No Data Available</h1>
                   <h1 className='text-center text-lg'>Please add a vacancy to make the data appear.</h1>
                 </div>
@@ -251,13 +251,13 @@ const VacancyPage: React.FC<VacancyPageProps> = ({ token, setToken }) => {
                                       {/* First Row */}
                                       <div className="flex justify-between mb-2">
                                         {/* <div className=" p-2 mr-2 flex items-center">
-                                          <img src="../src/assets/vacancies/Edit.png" alt="Edit.png" className='h-8 mr-4' />
+                                          <img src="../assets/vacancies/Edit.png" alt="Edit.png" className='h-8 mr-4' />
                                           <span className=' mr-8 text-lg hover:text-green-400'
                                             onClick={(e) => { e.stopPropagation(); goToViewVacancy(vacancy.id) }}><a href="">Edit</a>
                                           </span>
                                         </div> */}
                                         {/* <div className="p-2 mr-2 flex items-center">
-                                          <img src="../src/assets/vacancies/Edit.png" alt="Edit.png" className="h-8 mr-4" />
+                                          <img src="../assets/vacancies/Edit.png" alt="Edit.png" className="h-8 mr-4" />
                                           <span className="mr-8 text-lg hover:text-green-400"
                                             onClick={(e) => {
                                               // e.preventDefault();
@@ -269,7 +269,7 @@ const VacancyPage: React.FC<VacancyPageProps> = ({ token, setToken }) => {
                                           </span>
                                         </div> */}
                                         <div className="p-2 mr-2 flex items-center">
-                                          <img src="../src/assets/vacancies/Edit.png" alt="Edit.png" className="h-8 mr-4" />
+                                          <img src="../assets/vacancies/Edit.png" alt="Edit.png" className="h-8 mr-4" />
                                           <span className="mr-8 text-lg hover:text-slate-300"
                                             onClick={(e) => {
                                               e.stopPropagation();  // Prevent triggering row click
@@ -290,7 +290,7 @@ const VacancyPage: React.FC<VacancyPageProps> = ({ token, setToken }) => {
                                       </div>
                                       {/* Second Row */}
                                       <div className="mb-2  flex items-center">
-                                        <img src="../src/assets/vacancies/RecommendedCandidates.png" alt="RecommendedCandidates.png" className='h-8 mr-5' />
+                                        <img src="../assets/vacancies/RecommendedCandidates.png" alt="RecommendedCandidates.png" className='h-8 mr-5' />
                                         <span className=' text-lg hover:text-slate-300'>
                                           {/* <a href=""
                                             onClick={(e) => { e.stopPropagation(); goToViewRecommendCan(vacancy) }}
@@ -305,7 +305,7 @@ const VacancyPage: React.FC<VacancyPageProps> = ({ token, setToken }) => {
 
                                       <div className="flex justify-between mb-2">
                                         <div className=" p-2 mr-2 flex items-center">
-                                          <img src="../src/assets/vacancies/Delete.png" alt="Delete.png" className='h-8 mr-3' />
+                                          <img src="../assets/vacancies/Delete.png" alt="Delete.png" className='h-8 mr-3' />
                                           <span className=' text-lg hover:text-slate-300 cursor-pointer'
                                             onClick={(e) => { e.stopPropagation(); openConfirmation(vacancy.id, vacancy.positionApplied, index) }}
                                           >
@@ -587,7 +587,7 @@ export default VacancyPage
 //               // {candidatesData.length === 0 ? (
 //               <div className=" flex justify-center items-center py-4">
 //                 <div className="  flex flex-col items-center px-72">
-//                   <img src="../src/assets/vacancies/VacancyNDA.png" alt="VacancyNDA.png" className='h-48' />
+//                   <img src="../assets/vacancies/VacancyNDA.png" alt="VacancyNDA.png" className='h-48' />
 //                   <h1 className='text-center mt-2 py-2 text-3xl font-bold'>No Data Available</h1>
 //                   <h1 className='text-center text-lg'>Please add a vacancy to make the data appear.</h1>
 //                 </div>
