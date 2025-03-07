@@ -104,7 +104,7 @@ const Header = ({ token, setToken, candidateButtonClass, vacanciesButtonClass }:
         <header>
             <div className='flex justify-between items-center'>
                 <div className='flex items-center'>
-                    <img onClick={() => goToPage('/')} src="../src/assets/ATALogo.png" alt="ATALogo" className='h-20 cursor-pointer' />
+                    <img onClick={() => goToPage('/')} src="assets/ATALogo.png" alt="ATALogo" className='h-20 cursor-pointer' />
                     <h1 onClick={() => goToPage('/')} className='text-lg ml-2 cursor-pointer hover:text-slate-300'>Talent Pool Database</h1>
                 </div>
                 <div className='flex items-center space-x-2 px-2'>
