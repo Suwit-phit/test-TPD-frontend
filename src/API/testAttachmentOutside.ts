@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/attactments-outside";
+// const API_URL = "http://localhost:8080/api/attactments-outside";
+// const API_URL = "https://test-tpd-sb.onrender.com/attactments-outside";
+const SB_BASE_URL = import.meta.env.VITE_TPD_SB_APP_API_URL;
+const API_URL = `${SB_BASE_URL}/attactments-outside`;
 
 // Function to get the token (adjust where you store it)
 const getAuthToken = () => localStorage.getItem("authToken") || "";

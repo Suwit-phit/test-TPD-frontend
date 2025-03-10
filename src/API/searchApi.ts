@@ -16,8 +16,13 @@ export interface Candidate {
     skills: string;
 }
 
-const API_URL = 'http://localhost:8080/vacancies/search?query=';
-const CANDIDATES_API_URL = 'http://localhost:8080/api/candidates/search?query=';
+// const API_URL = 'http://localhost:8080/vacancies/search?query=';
+// const CANDIDATES_API_URL = 'http://localhost:8080/api/candidates/search?query=';
+// const API_URL = 'https://test-tpd-sb.onrender.com/vacancies/search?query=';
+// const CANDIDATES_API_URL = 'https://test-tpd-sb.onrender.com/api/candidates/search?query=';
+const SB_BASE_URL = import.meta.env.VITE_TPD_SB_APP_API_URL;
+const API_URL = `${SB_BASE_URL}/vacancies/search?query=`;
+const CANDIDATES_API_URL = `${SB_BASE_URL}/api/candidates/search?query=`;
 
 const handleError = (error: unknown, defaultMessage: string) => {
     if (axios.isAxiosError(error)) {

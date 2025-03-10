@@ -2,7 +2,11 @@
 import axios from 'axios';
 import { toast } from 'react-toastify'; // Import toast for notifications
 
-const API_URL = 'http://localhost:8080/api/attachments-outside';
+// const API_URL = 'http://localhost:8080/api/attachments-outside';
+// const API_URL = 'https://test-tpd-sb.onrender.com/api/attachments-outside';
+const SB_BASE_URL = import.meta.env.VITE_TPD_SB_APP_API_URL;
+// const API_URL = `${SB_BASE_URL}/password-reset`; 
+const API_URL = `${SB_BASE_URL}/api/attachments-outside`;
 
 // Fetch all attachments with optional sorting and ordering options
 export const getAttachments = async (token: string, sortBy?: string, ascending?: boolean) => {

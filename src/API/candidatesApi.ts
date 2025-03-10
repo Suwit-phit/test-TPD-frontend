@@ -39,7 +39,10 @@ export interface CandidateType {
 }
 
 // Base API URL
-const API_URL = 'http://localhost:8080/api/candidates';
+// const API_URL = 'http://localhost:8080/api/candidates';
+// const API_URL = 'https://test-tpd-sb.onrender.com/api/candidates';
+const SB_BASE_URL = import.meta.env.VITE_TPD_SB_APP_API_URL;
+const API_URL = `${SB_BASE_URL}/api/candidates`;
 
 /**
  * Helper function to handle errors and display toast notifications

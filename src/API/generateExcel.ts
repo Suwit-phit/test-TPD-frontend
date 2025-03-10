@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8080'; // Replace with your actual backend URL
+// const BASE_URL = 'http://localhost:8080'; // Replace with your actual backend URL
+// const BASE_URL = 'https://test-tpd-sb.onrender.com'; // Replace with your actual backend URL
+const BASE_URL = import.meta.env.VITE_TPD_SB_APP_API_URL; // Replace with your actual backend URL
 
 // API to generate Excel for Candidates
 export const generateCandidateExcel = async () => {

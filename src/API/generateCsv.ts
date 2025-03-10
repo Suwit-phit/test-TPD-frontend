@@ -1,8 +1,10 @@
 // src/services/csvService.ts
 import axios from 'axios';
 
-// const BASE_URL = process.env.REACT_APP_BASE_URL;
-const BASE_URL = 'http://localhost:8080';
+// const BASE_URL = import.meta.env.REACT_APP_BASE_URL;
+// const BASE_URL = 'http://localhost:8080';
+// const BASE_URL = 'https://test-tpd-sb.onrender.com';
+const BASE_URL = import.meta.env.VITE_TPD_SB_APP_API_URL;
 
 export const generateCsv = async (type: 'candidates' | 'vacancies', token: string) => {
   try {

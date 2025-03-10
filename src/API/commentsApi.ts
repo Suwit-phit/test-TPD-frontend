@@ -1,7 +1,10 @@
 import axios from "axios";
 
 // src/api/commentsApi.ts
-export const BASE_URL = 'http://localhost:8080/api/comments';
+// export const BASE_URL = 'http://localhost:8080/api/comments';
+// export const BASE_URL = 'https://test-tpd-sb.onrender.com/api/comments';
+const SB_BASE_URL = import.meta.env.VITE_TPD_SB_APP_API_URL;
+export const BASE_URL = `${SB_BASE_URL}/api/comments`;
 
 export async function fetchAllComments(token: string) {
     const response = await fetch(`${BASE_URL}/all`, {

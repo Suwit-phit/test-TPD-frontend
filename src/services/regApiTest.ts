@@ -11,10 +11,15 @@ interface RegisterResponse {
   message: string;
 }
 
+const SB_BASE_URL = import.meta.env.VITE_TPD_SB_APP_API_URL;
+// const API_URL = `${SB_BASE_URL}/password-reset`; 
+
 // Define a function to register a new user
 export const registerUser = async (userData: UserData): Promise<string> => {
   try {
-    const response = await axios.post<RegisterResponse>('http://localhost:8080/register', userData);
+    // const response = await axios.post<RegisterResponse>('http://localhost:8080/register', userData);
+    // const response = await axios.post<RegisterResponse>('https://test-tpd-sb.onrender.com/register', userData);
+    const response = await axios.post<RegisterResponse>(`${SB_BASE_URL}/register`, userData);
     return response.data.message; // Success message from backend
   } catch (error: unknown) {
     if (axios.isAxiosError(error)) {

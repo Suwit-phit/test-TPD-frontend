@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080';
+// const API_URL = 'http://localhost:8080';
+// const API_URL = 'https://test-tpd-sb.onrender.com';
+// const API_URL = import.meta.env.VITE_TPD_SB_APP_API_URL;
+const API_URL = import.meta.env.VITE_TPD_SB_APP_API_URL;
+console.log("API_URL = ", API_URL);
+// const API_URL = import.meta.env.LOCAL_TPD_SB_APP_API_URL;
 // const API_URL = 'https://matching-production-b463.up.railway.app';
 // const API_URL = 'https://matching-render.onrender.com';
 // const API_URL = '/api/auth';

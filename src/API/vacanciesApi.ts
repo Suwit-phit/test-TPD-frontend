@@ -26,7 +26,9 @@ export interface MatchingCandidate {
     matchPercentage: number;
 }
 
-const API_URL = 'http://localhost:8080';
+// const API_URL = 'http://localhost:8080';
+// const API_URL = 'https://test-tpd-sb.onrender.com';
+const API_URL = import.meta.env.VITE_TPD_SB_APP_API_URL;
 
 // Fetch all vacancies
 export const fetchVacancy = async (token: string) => {
